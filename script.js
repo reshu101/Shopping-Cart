@@ -67,3 +67,31 @@ function updateQuantity(change) {
   currentQuantity = Math.max(1, currentQuantity + change);
   quantityInput.value = currentQuantity;
 }
+const mainImage = document.getElementById('main-image');
+const thumbnailContainer = document.getElementById('thumbnail-container');
+
+// Sample array of thumbnail image URLs
+const thumbnailImages = [
+  'https://cdn.shopify.com/s/files/1/0564/3685/0790/files/laura-chouette-HVlOLCHlzJs-unsplash.jpg?v=1701946732',
+  'https://cdn.shopify.com/s/files/1/0564/3685/0790/files/laura-chouette-om8qxMDlGfI-unsplash.jpg?v=1701946732',
+  'https://cdn.shopify.com/s/files/1/0564/3685/0790/files/laura-chouette-WQgvRkmqRrg-unsplash.jpg?v=1701946731',
+  'https://cdn.shopify.com/s/files/1/0564/3685/0790/files/laura-chouette-6Y2XstWtDvM-unsplash.jpg?v=1701946731',
+];
+
+// Display main image
+mainImage.src = thumbnailImages[0];
+
+// Loop through the array and create thumbnail elements
+thumbnailImages.forEach((url, index) => {
+  const thumbnail = document.createElement('img');
+  thumbnail.src = url;
+  thumbnail.alt = 'Thumbnail';
+  thumbnail.classList.add('thumbnail');
+  
+  // Attach a click event to each thumbnail
+  thumbnail.addEventListener('click', () => {
+    mainImage.src = url; // Set main image source to clicked thumbnail
+  });
+
+  thumbnailContainer.appendChild(thumbnail);
+});
