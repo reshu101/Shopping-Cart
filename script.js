@@ -61,3 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
   originalPriceElement.innerText = `  $${originalPrice}`;
   discountedPriceElement.innerText = `$${discountedPrice.toFixed(2)}`;
 });
+function updateQuantity(change) {
+  const quantityInput = document.getElementById('quantity');
+  let currentQuantity = parseInt(quantityInput.value) || 0;
+  currentQuantity = Math.max(1, currentQuantity + change);
+  quantityInput.value = currentQuantity;
+}
