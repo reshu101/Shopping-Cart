@@ -1,9 +1,8 @@
 # Shopping-Cart
 Key Points:
 
-Product Display: The layout includes a clear representation of the product with its main image and thumbnail images for easy navigation.
-
-Product Information: Details like the product vendor, title, price, and a compare-at price (with an example of $199) are displayed. Additionally, the percentage off is calculated using JavaScript.
+Product Display: The layout includes a clear representation of the product with its main image .
+Product Information: Details like the product vendor, title, price, and a compare-at price (with an example of $19999) are displayed. Additionally, the percentage off is calculated using JavaScript.
 
 Variant Selectors: Color and size selectors are provided, allowing users to choose their preferred options.
 
