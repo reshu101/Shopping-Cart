@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <!-- REPLACE THIS WITH YOUR PROJECT NAME. EXAMPLE - Category tabs -->
+    <title>shopping cart</title>
+
+</head>
+
+<body>
+    <!-- Your code goes here -->
+    <div class="container">
+        <div class="product-details">
+            <div class="image-container">
+                <img id="product-image"
+                    src="https://cdn.shopify.com/s/files/1/0564/3685/0790/files/laura-chouette-6Y2XstWtDvM-unsplash.jpg?v=1701946731"
+                    alt="Product Image">
+            </div>
+
+
+            <div class="details-container">
+
+                <span id="product-vendor" class="vendor"></span>
+                <h1 id="product-title" class="title"></h1>
+                <hr>
+                <div class="price">
+                    <span id="compare-at-price" class="compare-at-price"></span>
+                    <span id="percentage-off" class="percentage-off"><sup>35% Off</sup></span>
+                    <br>
+                    <span id="current-price" class="current-price"></span><br>
+
+                    <hr>
+                </div>
+                <div class="selectors">
+                    <span for="color">Choose a Color:</span>
+                    <div class="color-selector">
+
+                        <div class="color-container" id="selected-color-container"></div>
+
+                        <select id="color" onchange="updateSelectedColor()">
+                            <option value="yellow">yellow</option>
+                            <option value="green">Green</option>
+                            <option value="blue">Blue</option>
+                            <option value="pink">pink</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <span for="color">Choose a size:</span>
+                    <div class="size-selector">
+                        <input type="radio" name="size" id="size-small" class="size-radio"
+                            onchange="updateSelectedSize('Small')" value="small">
+                        <label for="size-small">Small</label>
+
+                        <input type="radio" name="size" id="size-medium" class="size-radio"
+                            onchange="updateSelectedSize('Medium')" value="medium">
+                        <label for="size-medium">Medium</label>
+
+                        <input type="radio" name="size" id="size-large" class="size-radio"
+                            onchange="updateSelectedSize('Large')" value="large">
+                        <label for="size-large">Large</label>
+
+                        <input type="radio" name="size" id="size-extralarge" class="size-radio"
+                            onchange="updateSelectedSize('extraLarge')" value="extraLarge">
+                        <label for="size-extralarge">Extra-Large</label>
+
+                        <input type="radio" name="size" id="size-xxl" class="size-radio"
+                            onchange="updateSelectedSize('xxl')" value="xxl">
+                        <label for="size-xxl">XXL</label>
+                    </div>
+                    <hr>
+                    <div class="quantity-selector">
+                        <label for="quantity">Quantity:</label>
+                        <input type="number" id="quantity" value="1" min="1">
+                    </div>
+                </div>
+                <button class="add-to-cart-button" onclick="addToCart()">Add to Cart</button>
+                <hr>
+                <div id="cart-message" class="cart-message"></div>
+                <div id="description" class="description"></div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Happy codign 😊 -->
+    <script src="./script.js"></script>
+</body>
+
+</html>
