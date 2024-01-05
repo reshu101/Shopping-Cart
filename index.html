@@ -1,99 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <!-- REPLACE THIS WITH YOUR PROJECT NAME. EXAMPLE - Category tabs -->
-    <title>shopping cart</title>
-
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Your code goes here -->
     <div class="container">
-        <div class="product-details">
-            <div class="image-container">
-                
-                    <img id="main-image" src="https://via.placeholder.com/300" alt="Main Image">
+        
+      <div class="box1 box">
+        <img id="mainImage" src="" alt="Main Image">
 
-  <div id="thumbnail-container"></div>
-            </div>
-
-
-            <div class="details-container">
-
-                <span id="product-vendor" class="vendor"></span>
-                <h1 id="product-title" class="title"></h1>
-                <hr>
-                <div class="price">
-                    <span id="compare-at-price" class="compare-at-price"></span>
-                    <span id="percentage-off" class="percentage-off"><sup>35% Off</sup></span>
-                    <br>
-                    <span id="current-price" class="current-price"></span><br>
-
-                    <hr>
-                </div>
-                <div class="selectors">
-                    <span for="color">Choose a Color:</span>
-                    <div class="color-selector">
-
-                        <div class="color-container" id="selected-color-container"></div>
-
-                        <select id="color" onchange="updateSelectedColor()">
-                            <option value="yellow">yellow</option>
-                            <option value="green">Green</option>
-                            <option value="blue">Blue</option>
-                            <option value="pink">pink</option>
-                        </select>
-                    </div>
-                    <hr>
-                    <span for="color">Choose a size:</span>
-                    <div class="size-selector">
-                        <input type="radio" name="size" id="size-small" class="size-radio"
-                            onchange="updateSelectedSize('Small')" value="small">
-                        <label for="size-small">Small</label>
-
-                        <input type="radio" name="size" id="size-medium" class="size-radio"
-                            onchange="updateSelectedSize('Medium')" value="medium">
-                        <label for="size-medium">Medium</label>
-
-                        <input type="radio" name="size" id="size-large" class="size-radio"
-                            onchange="updateSelectedSize('Large')" value="large">
-                        <label for="size-large">Large</label>
-
-                        <input type="radio" name="size" id="size-extralarge" class="size-radio"
-                            onchange="updateSelectedSize('extraLarge')" value="extraLarge">
-                        <label for="size-extralarge">Extra-Large</label>
-
-                        <input type="radio" name="size" id="size-xxl" class="size-radio"
-                            onchange="updateSelectedSize('xxl')" value="xxl">
-                        <label for="size-xxl">XXL</label>
-                    </div>
-                    <hr>
-                    <!-- <div class="quantity-selector">
-                        <label for="quantity">Quantity:</label>
-                        <input type="number" id="quantity" value="1" min="1">
-                    </div> -->
-                    <div class="quantity-selector">
-                        
-                        <button class="quantity-button" onclick="updateQuantity(-1)">-</button>
-                        <input type="text" class="quantity-input" id="quantity" value="1">
-                        <button class="quantity-button" onclick="updateQuantity(1)">+</button>
-                      </div>
-                </div>
-                <button class="add-to-cart-button" onclick="addToCart()">Add to Cart</button>
-                <hr>
-                <div id="cart-message" class="cart-message"></div>
-                <div id="description" class="description"></div>
-            </div>
-
+        <div id="thumbnailContainer"></div>
+      </div>
+      <div class="box2 box">
+        <div id="vendorName"></div>
+        <div id="productTitle"></div><hr>
+        <div class="price">
+        <span id="discountedPrice"> </span>
+        <span class="percentageoff">  35% off</span><br>
+        <span id="compare_at_price"></span>
+        </div><hr>
+        <div><span class="choose">choose a color</span></div>
+        <div class="colorSquare" id="Yellow" onclick="selectColor('Yellow')" style="background-color: #ECDECC;">
+            <div class="checkMark" id="checkMarkYellow">✓</div>
         </div>
+    
+        <div class="colorSquare" id="Green" onclick="selectColor('Green')" style="background-color: #BBD278;">
+            <div class="checkMark" id="checkMarkGreen">✓</div>
+        </div>
+    
+        <div class="colorSquare" id="Blue" onclick="selectColor('Blue')" style="background-color: #BBC1F8;">
+            <div class="checkMark" id="checkMarkBlue">✓</div>
+        </div>
+    
+        <div class="colorSquare" id="Pink" onclick="selectColor('Pink')" style="background-color: #FFD3F8;">
+            <div class="checkMark" id="checkMarkPink">✓</div>
+        </div>
+        
+<hr>
+<div class="choose">choose a size</div>
+<label class="sizeButton">
+    <input type="radio" name="size" value="Small"> Small
+</label>
 
+<label class="sizeButton">
+    <input type="radio" name="size" value="Medium"> Medium
+</label>
+
+<label class="sizeButton">
+    <input type="radio" name="size" value="Large"> Large
+</label>
+
+<label class="sizeButton">
+    <input type="radio" name="size" value="ExtraLarge"> X-Large
+</label>
+
+<label class="sizeButton">
+    <input type="radio" name="size" value="XXL"> XXL
+</label>
+<div class="quantityButtons">
+   <button class="quant">
+    <div class="quantityButton" onclick="decrementQuantity()">-</div>
+    <div id="quantity">1</div>
+    <div class="quantityButton" onclick="incrementQuantity()">+</div></button>
+    <div id="addToCartButton" onclick="addToCart()">Add to Cart</div>
+</div>
+
+<div id="addedProductContainer"></div><hr>
+<div id="descriptionContainer"></div>
+
+      </div>
+
+
+       
     </div>
-    <!-- Happy codign 😊 -->
-    <script src="./script.js"></script>
+   <script src="script.js"></script>
 </body>
-
 </html>
