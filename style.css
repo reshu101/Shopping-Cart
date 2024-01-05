@@ -148,15 +148,35 @@
     display: flex;
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    /* Styles for tablets */
     #thumbnailContainer {
         overflow-x: hidden; /* Disable horizontal scrolling for tablets */
     }
+    .box {
+        width: 400px; /* Adjust the width for tablets */
+    }
 }
 
+/* Styles for mobile screens */
 @media only screen and (max-width: 767px) {
-    /* Styles for mobile screens */
     #thumbnailContainer {
-        overflow-x: hidden; /* Disable horizontal scrolling for mobile screens */
+        overflow-x: auto; /* Enable horizontal scrolling for mobile screens */
+    }
+    .box {
+        width: 90%; /* Adjust the width for mobile screens */
+    }
+    #mainImage {
+        max-width: 100%; /* Ensure the main image doesn't overflow on small screens */
+    }
+}
+@media only screen and (max-width: 480px) {
+    /* Additional styles for smaller screens */
+    .box {
+        width: 90%; /* Adjust the width for small screens */
+    }
+    #addToCartButton {
+        width: 80%; /* Adjust the width of the button for small screens */
+    }
+    #descriptionContainer {
+        font-size: 0.9rem; /* Adjust the font size for small screens */
     }
 }
